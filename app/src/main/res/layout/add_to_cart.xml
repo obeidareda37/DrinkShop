@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constrain1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/image_cart_product"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                />
+
+            <TextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image_cart_product"
+                android:id="@+id/txt_cart_product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Milk Tea"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:textStyle="bold"/>
+
+            <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                android:id="@+id/text_count"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                app:textColor="@color/white"
+                app:textSize="6sp"
+                app:initialNumber="1"
+                app:finalNumber="100"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:backGroundColor="@color/purple_700"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="15dp"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/edt_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Comment"
+            android:background="@color/white"
+            android:layout_margin="8dp"
+            android:padding="4dp"
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:lines="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constrain1"/>
+
+
+            <!--      Group 1 Size of Cup-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintTop_toBottomOf="@id/edt_comment"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="5dp"
+                android:id="@+id/constrian2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Choose_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choose Size"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/REQUERD1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_round_gray"
+                    android:padding="4dp"
+                    android:text="REQUIRED"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Choose_size">
+
+                    <RadioButton
+                        android:id="@+id/rdi_sizeM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Size M" />
+
+                    <RadioButton
+                        android:id="@+id/rdi_sizeL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Size L" />
+
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/zero"
+                    app:layout_constraintTop_toBottomOf="@id/REQUERD1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:text="+$0"
+                    android:textSize="18sp" />
+
+                <TextView
+                    app:layout_constraintTop_toBottomOf="@id/zero"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+$3"
+                    android:textSize="18sp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <!--   Group 2 Size of Sugar-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constrian3"
+                app:layout_constraintTop_toBottomOf="@id/constrian2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="5dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Choose_sugar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choose Sugar"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/REQUERD2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_round_gray"
+                    android:padding="4dp"
+                    android:text="REQUIRED"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="4dp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Choose_sugar">
+
+                    <RadioButton
+                        android:id="@+id/rdi_sugar_100"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100%" />
+
+                    <RadioButton
+                        android:id="@+id/rdi_sugar_70"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="70%" />
+
+                    <RadioButton
+                        android:id="@+id/rdi_sugar_50"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50%" />
+
+                    <RadioButton
+                        android:id="@+id/rdi_sugar_30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30%" />
+
+                    <RadioButton
+                        android:id="@+id/rdi_sugar_free"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Free" />
+
+
+                </RadioGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--   Group 3 Size of Ice-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constrian4"
+                app:layout_constraintTop_toBottomOf="@id/constrian3"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_marginStart="5dp"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/Choose_ice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choose Ice"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_round_gray"
+                    android:padding="4dp"
+                    android:text="REQUIRED"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Choose_ice">
+
+                    <RadioButton
+                        android:id="@+id/rdi_ice_100"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100%" />
+
+                    <RadioButton
+                        android:id="@+id/rdi_ice_70"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="70%" />
+
+                    <RadioButton
+                        android:id="@+id/rdi_ice_50"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50%" />
+
+                    <RadioButton
+                        android:id="@+id/rdi_ice_30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30%" />
+
+                    <RadioButton
+                        android:id="@+id/rdi_ice_free"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Free" />
+
+
+                </RadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <!--   Group 4 Size of Topping-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constrian5"
+                app:layout_constraintTop_toBottomOf="@+id/constrian4"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/text_topping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Topping"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/recycler_topping"
+                    app:layout_constraintTop_toBottomOf="@id/text_topping"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
